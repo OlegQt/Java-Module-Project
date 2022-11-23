@@ -27,8 +27,15 @@ public class Main {
                         System.out.println("You could not be serious. Try again, please");
                         break;
                     default:
-                        System.out.println("Its Ok");
-                        inputComplete = true;
+                        if(num<0)
+                        {
+                            System.out.println("Вы ввели отрицательное число, попробуйте еще раз");
+                        }
+                        else
+                        {
+                            System.out.println("Запуск калькулятора");
+                            inputComplete = true;
+                        }
                         break;
                 }
             }

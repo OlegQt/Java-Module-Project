@@ -17,7 +17,7 @@ public class Calc {
             str = pScanner.next();
 
             boolean correctInput = false;
-            System.out.println("Введите цену \"" + str +"\" (format xx.xx)");
+            System.out.println("Введите соимость товара \"" + str +"\" в формате рубли.копейки' [10.45, 11.40]");
             while(!correctInput)
             {
                 if(pScanner.hasNextDouble())
