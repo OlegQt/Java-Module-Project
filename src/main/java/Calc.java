@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Calc {
     ArrayList<Commodity> pList = new ArrayList<Commodity>();
+    double sum = 0; // Полная сумма всех товаров
     public void startCalc()
     {
         Scanner pScanner = new Scanner(System.in);
@@ -38,10 +39,38 @@ public class Calc {
     }
     public void showAllCommodities()
     {
-        System.out.println("Добавленные товары");
+        System.out.println("Добавленные товары:");
+        this.sum = 0; // Перед расчетом обнулим сумму товаров на всякий случай
         for (int i = 0; i < pList.size(); i++) {
             pList.get(i).showCommodity();
+            sum+= pList.get(i).price; //Сразу суммируем стоимость,
+            // чтобы не прогонять цикл по второму разу отдельной функцией
         }
-
+    }
+    public void calculate(int personQuantity)
+    {
+        double money = this.sum/personQuantity;
+        //double money = 5.9589;
+        System.out.println(String.format("Каждый платит по %.2f %s",money,this.getWordEnd(money)));
+    }
+    public String getWordEnd(double num)
+    {
+        String strOst="";
+        num = Math.floor(num);
+        int ost =  (int)(num % 10);
+        switch (ost){
+            case 1:
+                strOst="рубль";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                strOst="рубля";
+                break;
+            default:
+                strOst="рублей";
+                break;
+        }
+        return strOst;
     }
 }

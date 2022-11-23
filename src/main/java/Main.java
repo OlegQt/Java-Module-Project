@@ -8,12 +8,19 @@ public class Main {
         System.out.println("////////////////////////////////");
         Scanner pScanner = new Scanner(System.in);
         boolean inputComplete = false; // Флаг для прохождения цикла.
+        int num = 0; // Количество персон
+        ////////////////////////////////////////////////////////////////////////
+        // Цикличный ввод количества персон (не стал делать отдельным методом, хотя
+        // Было бы красиве
+        ////////////////////////////////////////////////////////////////////////
+        //Calc pC = new Calc();
+        //pC.calculate(7);
         while (!inputComplete)
         {
             System.out.println("How many people you want to share bill with?");
             // Здесь проверяем, если введена строка, а не число
             if (pScanner.hasNextInt()) {
-                int num = pScanner.nextInt();
+                num = pScanner.nextInt();
                 switch (num) {
                     case 0:
                     case 1:
@@ -30,15 +37,11 @@ public class Main {
                 pScanner.next();
             }
         }
-
-
-        Calc pCalc = new Calc();
-        pCalc.startCalc();
-        pCalc.showAllCommodities();
-
-
-
-
+        /////////////////////////////////////////////////////////////////////
+        Calc pCalc = new Calc(); // Создаем указатель на элемент нашего класса
+        pCalc.startCalc(); // Вызывем методы цикличного ввода товаров и суммы
+        pCalc.showAllCommodities(); // Метод вывода всех товаров на экран
+        pCalc.calculate(num); // Метода расчета суммы платежа и его вывод на экран
         System.out.println("////////////////////////////////");
     }
 }

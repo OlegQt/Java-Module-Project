@@ -13,7 +13,6 @@ public class Commodity {
     public void showCommodity()
     {
         // Выводим название и цену
-
         System.out.println(String.format("%s price %.2f",this.name,this.price));
     }
 
