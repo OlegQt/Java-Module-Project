@@ -23,8 +23,14 @@ public class Calc {
                 if(pScanner.hasNextDouble())
                 {
                     price = pScanner.nextDouble();
-                    correctInput =true;
-                    pList.add(new Commodity(str,price));
+                    if(price>0) {
+                        correctInput = true;
+                        pList.add(new Commodity(str, price));
+                    }
+                    else
+                    {
+                        System.out.println("Цена не может быть отрицательной или нулевой, введите еще раз");
+                    }
                 }
                 else
                 {
