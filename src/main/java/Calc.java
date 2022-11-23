@@ -77,6 +77,7 @@ public class Calc {
                 strOst="рублей";
                 break;
         }
+        if(num>9&&num<21) strOst="рублей";
         return strOst;
     }
 }
