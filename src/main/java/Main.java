@@ -3,20 +3,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // ваш код начнется здесь
-        // вы не должны ограничиваться только классом Main и можете создавать свои классы по необходимости
         System.out.println("////////////////////////////////");
         Scanner pScanner = new Scanner(System.in);
         boolean inputComplete = false; // Флаг для прохождения цикла.
         int num = 0; // Количество персон
-        ////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
         // Цикличный ввод количества персон (не стал делать отдельным методом, хотя
         // Было бы красиве
-        ////////////////////////////////////////////////////////////////////////
-        //Calc pC = new Calc();
-        //pC.calculate(7);
-        while (!inputComplete)
-        {
+        while (!inputComplete){
             System.out.println("How many people you want to share bill with?");
             // Здесь проверяем, если введена строка, а не число
             if (pScanner.hasNextInt()) {
