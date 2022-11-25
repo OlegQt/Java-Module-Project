@@ -69,4 +69,11 @@ public class Calc {
                 return "рублей";
         }
     }
+    public void releaseArray(){
+        for (Commodity c:this.pList) {
+            c.name="";
+            c.price=0;
+        }
+        this.pList.clear();
+    }
 }
